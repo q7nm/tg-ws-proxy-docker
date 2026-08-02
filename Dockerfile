@@ -21,7 +21,7 @@ RUN "$VIRTUAL_ENV/bin/pip" install cryptography==46.0.5
 
 FROM alpine/git AS source
 
-ARG TG_WS_PROXY_VERSION=v1.9.1
+ARG TG_WS_PROXY_VERSION
 
 RUN git clone \
     --branch ${TG_WS_PROXY_VERSION} \
