@@ -16,7 +16,7 @@ RUN apt-get update \
 
 WORKDIR /app
 
-RUN "$VIRTUAL_ENV/bin/pip" install cryptography==46.0.5
+RUN "$VIRTUAL_ENV/bin/pip" install cryptography==46.0.5 certifi
 
 
 FROM alpine/git AS source
@@ -51,6 +51,7 @@ WORKDIR /app
 COPY --from=builder /opt/venv /opt/venv
 
 COPY --from=source /src/proxy ./proxy
+COPY --from=source /src/utils ./utils
 COPY --from=source /src/docs/README.md /src/LICENSE ./
 
 USER app
