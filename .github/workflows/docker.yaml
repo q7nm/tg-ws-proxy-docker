@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  TG_WS_PROXY_VERSION: v1.10.4
+  TG_WS_PROXY_VERSION: v1.11.1
 
 jobs:
   build-and-push:
